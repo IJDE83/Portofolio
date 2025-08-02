@@ -133,5 +133,26 @@
   <footer>
     <p>© 2025 Ivan Jesus Diaz Encinoso</p>
   </footer>
+
+  <script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const fill = entry.target.querySelector('.fill');
+        const width = fill.style.width;
+        fill.style.setProperty('--target-width', width);
+        fill.classList.add('animate');
+        observer.unobserve(entry.target); // Alleen eenmaal activeren
+      }
+    });
+  }, {
+    threshold: 0.5
+  });
+
+  document.querySelectorAll('#languages .bar').forEach(bar => {
+    observer.observe(bar);
+  });
+</script>
+
 </body>
 </html>
