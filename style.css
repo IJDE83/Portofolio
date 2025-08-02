@@ -193,3 +193,18 @@ footer {
     justify-content: center;
   }
 }
+
+/* Voor scroll-animatie */
+.bar .fill {
+  width: 0 !important;
+}
+
+.bar .fill.animate {
+  animation: fillBar 1.5s ease forwards;
+}
+
+@keyframes fillBar {
+  to {
+    width: var(--target-width);
+  }
+}
