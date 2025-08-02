@@ -1,9 +1,11 @@
+/* Algemene stijlen */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background: #f2f2f2;
+  background: #f9f9f9;
   color: #333;
+  line-height: 1.6;
 }
 
 header {
@@ -13,18 +15,46 @@ header {
   padding: 2rem 1rem;
 }
 
-section {
-  padding: 2rem;
-  max-width: 800px;
-  margin: 0 auto;
+header h1 {
+  margin-bottom: 0.5rem;
 }
 
-.project {
+section {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
   background: white;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+h2 {
+  color: #222;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #0077cc;
+  padding-bottom: 0.5rem;
+}
+
+ul {
+  list-style-type: disc;
+  margin-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+/* Projecten */
+.project {
+  background: #f0f0f0;
   padding: 1rem;
   margin-bottom: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+  border-radius: 6px;
+}
+
+.project h3 {
+  margin-top: 0;
 }
 
 a {
@@ -36,9 +66,41 @@ a:hover {
   text-decoration: underline;
 }
 
+/* Werkervaring en andere blokken */
+.item {
+  margin-bottom: 1.5rem;
+}
+
+.item h3 {
+  margin: 0;
+  color: #444;
+}
+
+.item p {
+  margin: 0.3rem 0;
+}
+
+/* Contact */
+#contact p {
+  margin: 0.5rem 0;
+}
+
+/* Footer */
 footer {
   background-color: #eee;
   text-align: center;
   padding: 1rem;
-  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+
+  section {
+    padding: 1.5rem 1rem;
+  }
 }
