@@ -78,7 +78,7 @@ li {
   margin-bottom: 0.5rem;
 }
 
-/* Projecten & ervaring */
+/* Werkervaring, projecten, enz. */
 .item, .project {
   border: 1px solid #ddd;
   padding: 1rem;
@@ -118,6 +118,32 @@ li {
   padding: 0.4rem 0.8rem;
   border-radius: 20px;
   font-size: 0.9rem;
+}
+
+/* Language skill bars */
+#languages .language {
+  margin-bottom: 1rem;
+}
+
+#languages .language span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.bar {
+  background: #ddd;
+  border-radius: 20px;
+  height: 18px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  background: #0077cc;
+  width: 0;
+  transition: width 1s ease-in-out;
+  border-radius: 20px 0 0 20px;
 }
 
 /* Contact */
