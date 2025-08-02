@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -52,7 +52,7 @@
     </div>
 
     <div class="item">
-      <h3>Warehouse Employee - VSN Nederland</h3>
+      <h3>Warehouse Employee</h3>
       <p><strong>Period:</strong> Sep 2009 – Jun 2019</p>
       <p>Inventory management and control, cleaning, loading and unloading.</p>
     </div>
@@ -104,23 +104,15 @@
     <h2>Languages</h2>
     <div class="language">
       <span>English – C2</span>
-      <div class="bar"><div class="fill" style="width: 90%;"></div></div>
+      <div class="bar" data-width="100%"><div class="fill"></div></div>
     </div>
     <div class="language">
-      <span>Dutch – Native</span>
-      <div class="bar"><div class="fill" style="width: 100%;"></div></div>
+      <span>Dutch – C1</span>
+      <div class="bar" data-width="85%"><div class="fill"></div></div>
     </div>
     <div class="language">
       <span>Spanish – Native</span>
-      <div class="bar"><div class="fill" style="width: 100%;"></div></div>
-    </div>
-    <div class="language">
-      <span>Deutsch – A2</span>
-      <div class="bar"><div class="fill" style="width: 25%;"></div></div>
-    </div>
-    <div class="language">
-      <span>French – A2</span>
-      <div class="bar"><div class="fill" style="width: 25%;"></div></div>
+      <div class="bar" data-width="100%"><div class="fill"></div></div>
     </div>
   </section>
 
@@ -134,25 +126,24 @@
     <p>© 2025 Ivan Jesus Diaz Encinoso</p>
   </footer>
 
+  <!-- Scroll-animatie voor talenbalken -->
   <script>
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const fill = entry.target.querySelector('.fill');
-        const width = fill.style.width;
-        fill.style.setProperty('--target-width', width);
-        fill.classList.add('animate');
-        observer.unobserve(entry.target); // Alleen eenmaal activeren
-      }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const fill = entry.target.querySelector('.fill');
+          const targetWidth = entry.target.getAttribute('data-width');
+          fill.style.width = targetWidth;
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.5
     });
-  }, {
-    threshold: 0.5
-  });
 
-  document.querySelectorAll('#languages .bar').forEach(bar => {
-    observer.observe(bar);
-  });
-</script>
-
+    document.querySelectorAll('#languages .bar').forEach(bar => {
+      observer.observe(bar);
+    });
+  </script>
 </body>
 </html>
