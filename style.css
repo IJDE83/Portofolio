@@ -8,6 +8,35 @@ body {
   line-height: 1.6;
 }
 
+/* Navigatiebalk */
+nav {
+  background: #333;
+  padding: 1rem 0;
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin: 0 1rem;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
 header {
   background-color: #333;
   color: white;
@@ -19,14 +48,14 @@ header h1 {
   margin-bottom: 0.5rem;
 }
 
+/* Secties */
 section {
-  padding: 2rem;
-  max-width: 900px;
-  margin: 0 auto;
+  padding: 3rem 2rem;
+  max-width: 1000px;
+  margin: 0 auto 1.5rem auto;
   background: white;
-  margin-bottom: 1.5rem;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 h2 {
@@ -36,6 +65,7 @@ h2 {
   padding-bottom: 0.5rem;
 }
 
+/* Lijsten */
 ul {
   list-style-type: disc;
   margin-left: 1.5rem;
@@ -47,16 +77,24 @@ li {
 
 /* Projecten */
 .project {
-  background: #f0f0f0;
+  border: 1px solid #ddd;
   padding: 1rem;
-  margin-bottom: 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
+  background: #f8f8f8;
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 .project h3 {
   margin-top: 0;
 }
 
+/* Links */
 a {
   color: #0077cc;
   text-decoration: none;
@@ -66,7 +104,7 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Werkervaring en andere blokken */
+/* Werkervaring, studies, enz. */
 .item {
   margin-bottom: 1.5rem;
 }
@@ -78,6 +116,24 @@ a:hover {
 
 .item p {
   margin: 0.3rem 0;
+}
+
+/* Skills badges */
+#skills ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-left: 0;
+  list-style: none;
+  margin-left: 0;
+}
+
+#skills ul li {
+  background: #0077cc;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
 }
 
 /* Contact */
@@ -101,6 +157,19 @@ footer {
   }
 
   section {
-    padding: 1.5rem 1rem;
+    padding: 2rem 1rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 0.5rem 0;
+  }
+
+  #skills ul {
+    justify-content: center;
   }
 }
