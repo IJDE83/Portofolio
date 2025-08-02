@@ -78,7 +78,7 @@ li {
   margin-bottom: 0.5rem;
 }
 
-/* Werkervaring, projecten, enz. */
+/* Werkervaring, projecten */
 .item, .project {
   border: 1px solid #ddd;
   padding: 1rem;
@@ -136,13 +136,14 @@ li {
   border-radius: 20px;
   height: 18px;
   overflow: hidden;
+  position: relative;
 }
 
 .fill {
   height: 100%;
   background: #0077cc;
   width: 0;
-  transition: width 1s ease-in-out;
+  transition: width 1.2s ease-in-out;
   border-radius: 20px 0 0 20px;
 }
 
@@ -191,20 +192,5 @@ footer {
 
   #skills ul {
     justify-content: center;
-  }
-}
-
-/* Voor scroll-animatie */
-.bar .fill {
-  width: 0 !important;
-}
-
-.bar .fill.animate {
-  animation: fillBar 1.5s ease forwards;
-}
-
-@keyframes fillBar {
-  to {
-    width: var(--target-width);
   }
 }
