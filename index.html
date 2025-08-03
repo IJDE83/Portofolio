@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -25,39 +25,46 @@
   </header>
 
   <section id="about">
-  <h2>About Me</h2>
-  <div class="about-container">
-     <img src="IMG_20250710_161242_954.jpg" alt="Ivan Jesus Diaz Encinoso" class="profile-photo" />
-    <p>
-      I am a committed and positive person with a strong sense of responsibility. 
-      I recently moved from the Netherlands to Spain, eager for new challenges. 
-      I have experience in logistics and music, and I stand out for my precision, creativity, and adaptability. 
-      I work well in a team and aim to continue growing personally and professionally.
-    </p>
-  </div>
-</section>
+    <h2>About Me</h2>
+    <div class="about-container">
+      <img src="selfie.jpg" alt="Ivan Diaz" class="profile-photo" />
+      <p>
+        I am a committed and positive person with a strong sense of responsibility. 
+        I recently moved from the Netherlands to Spain, eager for new challenges. 
+        I have experience in logistics and music, and I stand out for my precision, creativity, and adaptability. 
+        I work well in a team and aim to continue growing personally and professionally.
+      </p>
+    </div>
+  </section>
 
   <section id="experience">
     <h2>Work Experience</h2>
-    <div class="item">
-      <h3>Music Producer / Audio Engineer – Panco Beats Music</h3>
-      <p><strong>Period:</strong> Jan 2022 – Present</p>
-      <p>Creation and maintenance of my website, offering music/audio services internationally.</p>
-      <p>Weekly production of instrumental music for artists and companies, used in tracks, films, and online media.</p>
-      <p>Providing customer service to international clients.</p>
+
+    <div class="dropdown">
+      <button class="dropdown-toggle">Music Producer / Audio Engineer – Panco Beats Music</button>
+      <div class="dropdown-content">
+        <p><strong>Period:</strong> Jan 2022 – Present</p>
+        <p>Creation and maintenance of my website, offering music/audio services internationally.</p>
+        <p>Weekly production of instrumental music for artists and companies, used in tracks, films, and online media.</p>
+        <p>Providing customer service to international clients.</p>
+      </div>
     </div>
 
-    <div class="item">
-      <h3>Online Store Employee – Van Horssen Markt</h3>
-      <p><strong>Period:</strong> Jun 2019 – Dec 2022</p>
-      <p>Processed online orders, managed inventory, created content and added products to the store.</p>
-      <p>Prepared daily shipments and maintained warehouse stock.</p>
+    <div class="dropdown">
+      <button class="dropdown-toggle">Online Store Employee – Van Horssen Markt</button>
+      <div class="dropdown-content">
+        <p><strong>Period:</strong> Jun 2019 – Dec 2022</p>
+        <p>Processed online orders, managed inventory, created content and added products to the store.</p>
+        <p>Prepared daily shipments and maintained warehouse stock.</p>
+      </div>
     </div>
 
-    <div class="item">
-      <h3>Warehouse Employee - VSN Nederland</h3>
-      <p><strong>Period:</strong> Sep 2009 – Jun 2019</p>
-      <p>Inventory management and control, cleaning, loading and unloading.</p>
+    <div class="dropdown">
+      <button class="dropdown-toggle">Warehouse Employee</button>
+      <div class="dropdown-content">
+        <p><strong>Period:</strong> Sep 2009 – Jun 2019</p>
+        <p>Inventory management and control, cleaning, loading and unloading.</p>
+      </div>
     </div>
   </section>
 
@@ -72,13 +79,10 @@
   <section id="diplomas">
     <h2>Diplomas & Certificates</h2>
     <ul>
-      <li>Electromovilidad - 2025</li>
       <li>Análisis del Ciclo de Vida – 2025</li>
       <li>English C2 – 2025</li>
-      <li>Creación de marca personal - 2025</li>
-      <li>Factura electronica</li>      
       <li>Mozo de Almacén – 2025</li>
-      <li>Itinerario: Lenguajes de Programación Web (HTML/CSS/Java/C#/.NET/SQL) – 2025</li>
+      <li>Itinerario: Lenguajes de Programación Web – 2025</li>
       <li>Autoconsumo con Energías Renovables – 2025</li>
       <li>Digitalización y Tecnologías Sostenibles – 2025</li>
       <li>Economía Circular – 2025</li>
@@ -101,11 +105,70 @@
       <li>Illustrator</li>
       <li>Microsoft Office</li>
       <li>Google Docs</li>
-      <li>Google Spreadsheets</li>
       <li>HTML</li>
       <li>CSS</li>
-      <li>Word</li>
-      <li>Excel</li>
+    </ul>
+  </section>
+
+  <section id="languages">
+    <h2>Languages</h2>
+    <div class="language">
+      <span>English – C2</span>
+      <div class="bar" data-width="100%"><div class="fill"></div></div>
+    </div>
+    <div class="language">
+      <span>Dutch – C1</span>
+      <div class="bar" data-width="85%"><div class="fill"></div></div>
+    </div>
+    <div class="language">
+      <span>Spanish – Native</span>
+      <div class="bar" data-width="100%"><div class="fill"></div></div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: ivan.diaz.encinoso@gmail.com</p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/jouwprofiel" target="_blank">My Profile</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Ivan Jesus Diaz Encinoso</p>
+  </footer>
+
+  <!-- Taalbalken animatie -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const fill = entry.target.querySelector('.fill');
+          const targetWidth = entry.target.getAttribute('data-width');
+          fill.style.width = targetWidth;
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    document.querySelectorAll('#languages .bar').forEach(bar => {
+      observer.observe(bar);
+    });
+  </script>
+
+  <!-- Dropdown functionaliteit -->
+  <script>
+    document.querySelectorAll('.dropdown-toggle').forEach(button => {
+      button.addEventListener('click', () => {
+        const content = button.nextElementSibling;
+        const isOpen = content.style.display === 'block';
+        document.querySelectorAll('.dropdown-content').forEach(el => el.style.display = 'none');
+        content.style.display = isOpen ? 'none' : 'block';
+      });
+    });
+  </script>
+</body>
+</html>
       <li>PowerPoint</li>
       <li>Asana</li>
       <li>AWeber</li>
