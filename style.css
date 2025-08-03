@@ -1,4 +1,4 @@
-/* Algemene stijlen */
+/* Algemene stijl */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -8,7 +8,7 @@ body {
   line-height: 1.6;
 }
 
-/* Navigatiebalk */
+/* Navigatie */
 nav {
   background: #333;
   padding: 1rem 0;
@@ -78,28 +78,52 @@ li {
   margin-bottom: 0.5rem;
 }
 
-/* Werkervaring, projecten */
-.item, .project {
-  border: 1px solid #ddd;
+/* About Me met selfie */
+.about-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.profile-photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Werkervaring dropdown */
+.dropdown {
+  margin-bottom: 1rem;
+}
+
+.dropdown-toggle {
+  width: 100%;
+  text-align: left;
   padding: 1rem;
-  border-radius: 8px;
-  background: #f8f8f8;
-  margin-bottom: 1.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  font-size: 1rem;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
 }
 
-.item:hover, .project:hover {
-  transform: scale(1.01);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.dropdown-toggle:hover {
+  background-color: #005fa3;
 }
 
-.item h3, .project h3 {
-  margin-top: 0;
-  color: #444;
-}
-
-.item p, .project p {
-  margin: 0.3rem 0;
+.dropdown-content {
+  display: none;
+  background-color: #f8f8f8;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 /* Skills badges */
@@ -120,7 +144,7 @@ li {
   font-size: 0.9rem;
 }
 
-/* Language skill bars */
+/* Languages voortgangsbalken */
 #languages .language {
   margin-bottom: 1rem;
 }
@@ -193,24 +217,7 @@ footer {
   #skills ul {
     justify-content: center;
   }
-}
-/* About-me sectie met afbeelding */
-.about-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 2rem;
-  flex-wrap: wrap;
-}
 
-.profile-photo {
-  width: 160px;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-@media (max-width: 768px) {
   .about-container {
     flex-direction: column;
     align-items: center;
